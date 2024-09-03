@@ -1,6 +1,13 @@
-package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.service;
+
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.behavior.InterestBehavior;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.Account;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.dao.AccountDAO;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.dao.AccountDAOImpl;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.Customer;
 
 import java.util.Collection;
+import java.util.List;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
@@ -9,8 +16,8 @@ public class AccountServiceImpl implements AccountService {
 		accountDAO = new AccountDAOImpl();
 	}
 
-	public Account createAccount(String accountNumber, String customerName) {
-		Account account = new Account(accountNumber);
+	public Account createAccount(String accountNumber, InterestBehavior interestBehavior, String customerName) {
+		Account account = new Account(accountNumber, interestBehavior);
 		Customer customer = new Customer(customerName);
 		account.setCustomer(customer);
 		
@@ -49,5 +56,14 @@ public class AccountServiceImpl implements AccountService {
 		fromAccount.transferFunds(toAccount, amount, description);
 		accountDAO.updateAccount(fromAccount);
 		accountDAO.updateAccount(toAccount);
+	}
+
+	@Override
+	public void addInterest(String accountNumber, double amount) {
+		Collection<Account> accounts = accountDAO.getAccounts();
+		for (Account account : accounts) {
+			account.addInterest();
+			accountDAO.updateAccount(account);
+		}
 	}
 }

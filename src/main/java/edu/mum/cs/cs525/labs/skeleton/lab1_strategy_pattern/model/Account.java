@@ -1,4 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model;
+
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.behavior.InterestBehavior;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,9 +13,15 @@ public class Account {
 
 	private List<AccountEntry> entryList = new ArrayList<AccountEntry>();
 
-	public Account(String accountNumber) {
+	private InterestBehavior interestBehavior;
+
+	private double balance;
+
+	public Account(String accountNumber, InterestBehavior interestBehavior) {
 		this.accountNumber = accountNumber;
-	}
+        this.interestBehavior = interestBehavior;
+		this.balance = 0;
+    }
 
 	public String getAccountNumber() {
 		return accountNumber;
@@ -24,9 +32,8 @@ public class Account {
 	}
 
 	public double getBalance() {
-		double balance = 0;
 		for (AccountEntry entry : entryList) {
-			balance += entry.getAmount();
+			this.balance += entry.getAmount();
 		}
 		return balance;
 	}
@@ -68,4 +75,8 @@ public class Account {
 		return entryList;
 	}
 
+	public void addInterest(){
+		double interest = interestBehavior.calculateInterest(getBalance());
+		balance += interest;
+	}
 }

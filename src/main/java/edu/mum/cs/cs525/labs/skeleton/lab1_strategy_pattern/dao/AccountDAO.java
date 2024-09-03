@@ -1,4 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.dao;
+
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.Account;
 
 import java.util.Collection;
 

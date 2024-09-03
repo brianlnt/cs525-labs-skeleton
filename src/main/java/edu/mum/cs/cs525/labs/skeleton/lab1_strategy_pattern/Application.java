@@ -1,12 +1,20 @@
 package edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern;
 
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.behavior.CheckingInterest;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.behavior.SavingInterest;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.Account;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.AccountEntry;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.Customer;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.service.AccountService;
+import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.service.AccountServiceImpl;
+
 public class Application {
 	public static void main(String[] args) {
 		AccountService accountService = new AccountServiceImpl();
 
 		// create 2 accounts;
-		accountService.createAccount("1263862", "Frank Brown");
-		accountService.createAccount("4253892", "John Doe");
+		accountService.createAccount("1263862", new CheckingInterest(), "Frank Brown");
+		accountService.createAccount("4253892", new SavingInterest(), "John Doe");
 		// use account 1;
 		accountService.deposit("1263862", 240);
 		accountService.deposit("1263862", 529);
