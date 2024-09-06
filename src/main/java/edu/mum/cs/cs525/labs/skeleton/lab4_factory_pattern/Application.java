@@ -8,6 +8,8 @@ import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.model.AccountEntry;
 import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.model.Customer;
 import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.service.AccountService;
 import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.service.AccountServiceImpl;
+import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.service.CustomerService;
+import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.service.CustomerServiceImpl;
 
 public class Application {
 	public static void main(String[] args) {
@@ -23,6 +25,8 @@ public class Application {
 		}
 
 		AccountService accountService = new AccountServiceImpl(accountDAOFactory);
+
+		CustomerService customerService = new CustomerServiceImpl(accountDAOFactory);
 
 		// create 2 accounts;
 		accountService.createAccount("1263862", "Frank Brown");
