@@ -1,7 +1,9 @@
 package edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern;
-
 import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.behavior.CheckingInterest;
+import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.behavior.InterestBehavior;
 import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.behavior.SavingInterest;
+import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.decorator.impl.P1;
+import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.decorator.impl.P2;
 import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.model.Account;
 import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.model.AccountEntry;
 import edu.mum.cs.cs525.labs.skeleton.lab3_observer_pattern.model.Customer;
@@ -23,7 +25,6 @@ public class Application {
 		accountService.deposit("4253892", 12450);
 		accountService.transferFunds("4253892", "1263862", 100, "payment of invoice 10232");
 		// show balances
-
 		for (Account account : accountService.getAllAccounts()) {
 			Customer customer = account.getCustomer();
 			System.out.println("Statement for Account: " + account.getAccountNumber());
@@ -43,6 +44,16 @@ public class Application {
 			System.out.println("----------------------------------------" + "----------------------------------------");
 			System.out.printf("%30s%30s%20.2f\n\n", "", "Current Balance:", account.getBalance());
 		}
+
+		InterestBehavior interestBehavior = new CheckingInterest();
+		System.out.println(interestBehavior.getDescription() + " $" + interestBehavior.calculateInterest(accountService.getAccount("1263862").getBalance()));
+
+
+		InterestBehavior interestBehavior2 = new SavingInterest();
+		interestBehavior2 = new P1(interestBehavior2);  // Add Mocha
+		interestBehavior2 = new P2(interestBehavior2);   // Add Milk
+		System.out.println(interestBehavior2.getDescription() + " $" + interestBehavior2.calculateInterest(accountService.getAccount("1263862").getBalance()));
 	}
+
 
 }

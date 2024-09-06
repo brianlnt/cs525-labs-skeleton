@@ -1,7 +1,6 @@
 package edu.mum.cs.cs525.labs.skeleton.decorator_pattern;
 
 public class Mocha extends CondimentDecorator {
-    Beverage beverage;
 
     public Mocha(Beverage beverage) {
         this.beverage = beverage;
