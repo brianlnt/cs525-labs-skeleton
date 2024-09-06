@@ -1,4 +1,4 @@
-package edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.model;
 
 public class Customer {
 	private String name;

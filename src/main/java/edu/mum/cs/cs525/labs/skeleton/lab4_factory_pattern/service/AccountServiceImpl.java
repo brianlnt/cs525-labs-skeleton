@@ -1,12 +1,17 @@
-package edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.service;
+
+import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.dao.AccountDAO;
+import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.factory.AccountDAOFactory;
+import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.model.Account;
+import edu.mum.cs.cs525.labs.skeleton.lab4_factory_pattern.model.Customer;
 
 import java.util.Collection;
 
 public class AccountServiceImpl implements AccountService {
 	private AccountDAO accountDAO;
 	
-	public AccountServiceImpl(){
-		accountDAO = new AccountDAOImpl();
+	public AccountServiceImpl(AccountDAOFactory factory){
+		accountDAO = factory.createAccountDAO();;
 	}
 
 	public Account createAccount(String accountNumber, String customerName) {
