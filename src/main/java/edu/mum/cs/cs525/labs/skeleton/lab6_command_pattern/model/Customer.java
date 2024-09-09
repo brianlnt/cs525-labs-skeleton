@@ -1,4 +1,4 @@
-package edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.model;
 
 public class Customer {
 	private String name;

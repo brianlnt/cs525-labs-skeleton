@@ -1,4 +1,6 @@
-package edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.dao;
+
+import edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.model.Account;
 
 import java.util.Collection;
 

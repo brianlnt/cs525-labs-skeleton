@@ -1,4 +1,9 @@
-package edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.service;
+
+import edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.dao.AccountDAO;
+import edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.dao.AccountDAOImpl;
+import edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.model.Account;
+import edu.mum.cs.cs525.labs.skeleton.lab6_command_pattern.model.Customer;
 
 import java.util.Collection;
 
