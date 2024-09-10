@@ -1,11 +1,15 @@
 package edu.mum.cs.cs525.labs.skeleton.lab7_adapter_facade_pattern;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
+import org.apache.logging.log4j.Logger;
 
 public class LoggerAdapter implements LoggerClient {
 
-    private static final Logger log4jLogger = (Logger) LogManager.getLogger(LoggerAdapter.class);
+    private final Logger log4jLogger;
+
+    public LoggerAdapter(Class<?> clazz) {
+        log4jLogger = LogManager.getLogger(clazz);
+    }
 
     @Override
     public void log(LogLevel logLevel, String message) {

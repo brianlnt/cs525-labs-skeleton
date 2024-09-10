@@ -4,7 +4,7 @@ import org.apache.logging.log4j.core.Logger;
 
 public class LoggerTestDrive {
 
-    private static final LoggerClient myLogger = new LoggerAdapter();
+    private static final LoggerClient myLogger = new LoggerAdapter(LoggerTestDrive.class);
 
     public static void main(String[] args) {
         myLogger.log(LogLevel.INFO, "Application started");
