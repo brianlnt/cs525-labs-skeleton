@@ -27,7 +27,7 @@ public abstract class Hire {
         this.name = name;
     }
 
-    public abstract void showDetails();
+    public abstract void print();
 
-    public abstract void accept(Consumer<? extends Hire> action);
+    public abstract void accept(Consumer<Hire> action);
 }

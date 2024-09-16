@@ -20,16 +20,16 @@ public class Manager extends Hire {
     }
 
     @Override
-    public void showDetails() {
+    public void print() {
         System.out.println("Manager: " + name + ", Salary: " + salary);
         for (Hire hire : hireList) {
-            hire.showDetails();
+            hire.print();
         }
     }
 
     @Override
-    public void accept(Consumer<? extends Hire> action) {
-        ((Consumer<Hire>) action).accept(this);
+    public void accept(Consumer<Hire> action) {
+        action.accept(this);
         for(Hire hire : hireList){
             hire.accept(action);
         }

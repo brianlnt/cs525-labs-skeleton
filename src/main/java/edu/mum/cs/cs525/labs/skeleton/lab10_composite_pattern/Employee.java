@@ -1,7 +1,5 @@
 package edu.mum.cs.cs525.labs.skeleton.lab10_composite_pattern;
 
-import edu.mum.cs.cs525.labs.skeleton.lab1_strategy_pattern.model.Customer;
-
 import java.util.function.Consumer;
 
 public class Employee extends Hire{
@@ -11,12 +9,12 @@ public class Employee extends Hire{
     }
 
     @Override
-    public void showDetails() {
+    public void print() {
         System.out.println("Employee: " + name + ", Salary: " + salary);
     }
 
     @Override
-    public void accept(Consumer<? extends Hire> action) {
-        ((Consumer<Hire>) action).accept(this);
+    public void accept(Consumer<Hire> action) {
+        action.accept(this);
     }
 }
