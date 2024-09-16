@@ -15,11 +15,11 @@ public class TestDrive {
         ceo.addHire(manager);
 
         HireCounterConsumer counter = new HireCounterConsumer();
-        ceo.accept(counter);
+        ceo.process(counter);
         System.out.println("Total number of hires: " + counter.getCounter());
 
         CalculateSalary calculateSalary = new CalculateSalary();
-        ceo.accept(calculateSalary);
+        ceo.process(calculateSalary);
         System.out.println("Total salary: " + calculateSalary.getTotalSalary());
     }
 }

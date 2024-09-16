@@ -29,5 +29,5 @@ public abstract class Hire {
 
     public abstract void print();
 
-    public abstract void accept(Consumer<Hire> action);
+    public abstract void process(Consumer<Hire> action);
 }
