@@ -6,12 +6,12 @@ public class TestDrive {
         Employee employee2 = new Employee("Nhat", 2000);
         Employee employee3 = new Employee("Duy", 3000);
 
-        Manager manager = new Manager("Vu", 10000);
+        Manager manager = new Manager("Vu", 10000, 1000);
         manager.addHire(employee1);
         manager.addHire(employee2);
         manager.addHire(employee3);
 
-        Manager ceo = new Manager("CEO", 100000);
+        Manager ceo = new Manager("CEO", 100000, 1000);
         ceo.addHire(manager);
 
         HireCounterConsumer counter = new HireCounterConsumer();
@@ -21,5 +21,9 @@ public class TestDrive {
         CalculateSalary calculateSalary = new CalculateSalary();
         ceo.process(calculateSalary);
         System.out.println("Total salary: " + calculateSalary.getTotalSalary());
+
+        TotalBudgetConsumer totalBudgetConsumer = new TotalBudgetConsumer();
+        ceo.process(totalBudgetConsumer);
+        System.out.println("Total budget: " + totalBudgetConsumer.getTotalBudget());
     }
 }

@@ -30,4 +30,6 @@ public abstract class Hire {
     public abstract void print();
 
     public abstract void process(Consumer<Hire> action);
+
+    public abstract double getBudget();
 }

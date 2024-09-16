@@ -17,4 +17,9 @@ public class Employee extends Hire{
     public void process(Consumer<Hire> action) {
         action.accept(this);
     }
+
+    @Override
+    public double getBudget() {
+        return salary;
+    }
 }

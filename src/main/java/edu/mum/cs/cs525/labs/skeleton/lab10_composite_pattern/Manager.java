@@ -6,9 +6,11 @@ import java.util.function.Consumer;
 
 public class Manager extends Hire {
     List<Hire> hireList = new ArrayList<>();
-
-    Manager(String name, double salary){
+    double bonus;
+    
+    Manager(String name, double salary, double bonus){
         super(name,salary);
+        this.bonus = bonus;
     }
 
     public boolean addHire(Hire hire){
@@ -33,5 +35,14 @@ public class Manager extends Hire {
         for(Hire hire : hireList){
             hire.process(action);
         }
+    }
+
+    @Override
+    public double getBudget() {
+        double budget = salary;
+        for(Hire hire : hireList){
+            budget += hire.getBudget();
+        }
+        return budget + bonus;
     }
 }
