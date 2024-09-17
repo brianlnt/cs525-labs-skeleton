@@ -4,10 +4,14 @@ public class OffState implements FanState {
 
     @Override
     public void pullGreen(CeilingFan ceilingFan) {
+        System.out.println("Fan is on Low speed");
+        ceilingFan.setFanState(new LowState());
     }
 
     @Override
     public void pullRed(CeilingFan ceilingFan) {
+        System.out.println("Fan is on High speed");
+        ceilingFan.setFanState(new HighState());
     }
 
 }
