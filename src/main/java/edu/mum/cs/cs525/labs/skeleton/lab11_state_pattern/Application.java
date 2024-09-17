@@ -1,5 +1,7 @@
 package edu.mum.cs.cs525.labs.skeleton.lab11_state_pattern;
 
+import edu.mum.cs.cs525.labs.skeleton.lab11_state_pattern.context.CeilingFan;
+
 public class Application {
     public static void main(String[] args) {
         CeilingFan fan = new CeilingFan();

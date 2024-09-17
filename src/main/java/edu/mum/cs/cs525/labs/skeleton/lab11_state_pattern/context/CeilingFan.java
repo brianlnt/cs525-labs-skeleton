@@ -1,4 +1,7 @@
-package edu.mum.cs.cs525.labs.skeleton.lab11_state_pattern;
+package edu.mum.cs.cs525.labs.skeleton.lab11_state_pattern.context;
+
+import edu.mum.cs.cs525.labs.skeleton.lab11_state_pattern.state.FanState;
+import edu.mum.cs.cs525.labs.skeleton.lab11_state_pattern.state.OffState;
 
 public class CeilingFan {
     private FanState fanState;
