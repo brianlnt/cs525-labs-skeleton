@@ -6,7 +6,7 @@ public class TestDrive {
         Employee employee2 = new Employee("Nhat", 2000);
         Employee employee3 = new Employee("Duy", 3000);
 
-        Manager manager = new Manager("Vu", 10000, 1000);
+        Manager manager = new Manager("Vu", 10000, 100);
         manager.addHire(employee1);
         manager.addHire(employee2);
         manager.addHire(employee3);

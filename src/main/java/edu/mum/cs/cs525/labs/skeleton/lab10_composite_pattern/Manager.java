@@ -21,6 +21,14 @@ public class Manager extends Hire {
         return hireList.remove(hire);
     }
 
+    public double getSalary(){
+        return salary;
+    }
+
+    public double getBonus(){
+        return bonus;
+    }
+
     @Override
     public void print() {
         System.out.println("Manager: " + name + ", Salary: " + salary);
@@ -39,10 +47,6 @@ public class Manager extends Hire {
 
     @Override
     public double getBudget() {
-        double budget = salary;
-        for(Hire hire : hireList){
-            budget += hire.getBudget();
-        }
-        return budget + bonus;
+        return getSalary() + getBonus();
     }
 }

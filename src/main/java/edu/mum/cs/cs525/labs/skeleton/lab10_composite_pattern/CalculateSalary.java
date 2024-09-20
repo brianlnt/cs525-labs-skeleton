@@ -9,6 +9,7 @@ public class CalculateSalary implements Consumer<Hire> {
     @Override
     public void accept(Hire hire) {
         totalSalary += hire.getSalary();
+        System.out.println(hire.getName() + "'s salary: " + hire.getSalary());
     }
 
     public double getTotalSalary() {
