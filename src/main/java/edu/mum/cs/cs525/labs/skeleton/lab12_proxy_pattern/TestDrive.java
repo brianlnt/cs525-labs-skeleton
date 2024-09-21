@@ -3,7 +3,9 @@ package edu.mum.cs.cs525.labs.skeleton.lab12_proxy_pattern;
 import java.lang.reflect.Proxy;
 
 public class TestDrive {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+//        ComplexInterface complex = new ComplexClass();
+
         // Create the virtual proxy
         ComplexInterface proxy = createProxy();
 

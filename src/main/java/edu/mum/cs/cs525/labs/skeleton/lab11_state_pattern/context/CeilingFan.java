@@ -15,10 +15,10 @@ public class CeilingFan {
     }
 
     public void pullGreen() {
-        fanState.pullGreen(this);
+        this.fanState = fanState.pullGreen();
     }
 
     public void pullRed() {
-        fanState.pullRed(this);
+        this.fanState = fanState.pullRed();
     }
 }

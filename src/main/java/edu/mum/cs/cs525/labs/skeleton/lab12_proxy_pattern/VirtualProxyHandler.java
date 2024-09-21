@@ -5,6 +5,9 @@ import java.lang.reflect.Method;
 
 public class VirtualProxyHandler implements InvocationHandler {
     private ComplexInterface realObject = null; // Real object is not created initially
+//    public VirtualProxyHandler(ComplexInterface complex) {
+//        this.realObject = complex;
+//    }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
